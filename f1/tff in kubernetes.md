@@ -37,5 +37,13 @@ alias pip=pip3
 
 pip install --upgrade pip
 pip install --upgrade tensorflow_federated
+pip install --quiet --upgrade nest_asyncio
+
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+kubectl create deployment tff-workers --image=gcr.io/tensorflow-federated/remote-executor-service:latest
+
+kubectl expose deployment tff-workers --type=LoadBalancer --port 80 --target-port 8000
+
 
 ```
