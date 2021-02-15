@@ -10,8 +10,7 @@ VERSION=2.3.1
 # if ca version not passed in, default to latest released version
 CA_VERSION=1.4.9
 ARCH=darwin-amd64
-# $(echo "$(uname -s|tr '[:upper:]' '[:lower:]'|sed 's/mingw64_nt.*/windows/')-$(uname -m | sed 's/x86_64/amd64/g')")
-MARCH=$(uname -m)
+MARCH=amd64
 
 printHelp() {
     echo "Usage: bootstrap.sh [version [ca_version]] [options]"
